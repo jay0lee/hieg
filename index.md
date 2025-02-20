@@ -36,7 +36,7 @@ function handleClick() {
       zip.file("rules1.json", JSON.stringify(rule, null, 2));
       zip.file("manifest.json", JSON.stringify(manifest, null, 2));
       zip.generateAsync({type:"blob"}).then(function(content) {
-        saveAs(content, "org-restriction-" + manifest.version + ".zip");
+        saveAs(content, "custom-header-" + manifest.version + ".zip");
       });
     });
   });
@@ -61,7 +61,7 @@ function handleClick() {
   <ol>
     <li>Download and unzip your generated extension.</li>
   <li><a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked">Install the unpacked extension</a></li>
-  <li>You should now be restricted to using the GCP organizations you allowlisted when generating your extension.</li>
+  <li>You should now be inserting the desired header on spexcific sites you specified when generating your extension.</li>
   </ol>
 
     <h3>Force installing the extension for users.</h3>
@@ -70,7 +70,7 @@ function handleClick() {
     <li>Upload the extension to the <a href="https://chrome.google.com/webstore/devconsole/">Chrome Web Store Developer Dashboard</a>.</li>
     <li>Publish the extension to your domain.</li>
     <li>In the admin console, force install the extension for your users.</li>
-    <li>If you need to modify the list of allowlisted GCP organizations, generate a new extension with the list and then upload the new version to the CWS developer dashboard.</li>
+    <li>If you need to modify the extension, generate a new extension with and then upload the new version to the CWS developer dashboard.</li>
   </ol>
 
 </body>
